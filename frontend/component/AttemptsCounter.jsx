@@ -11,7 +11,7 @@ const AttemptsCounter = ({ attempts, maxAttempts }) => {
             <div className="stat">
                 <div className="stat-title">Used Attempts</div>
                 <div className="stat-value text-secondary">{attempts}</div>
-                <div className="stat-desc">Try to guess in fewer attempts!</div>
+                <div className="stat-desc">Try making fewer attempts!</div>
             </div>
         </div>
     );
