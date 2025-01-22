@@ -15,7 +15,7 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(
     session({
         secret: "moy7qg8wpv",
-        resave: false,
+        resave: true,
         saveUninitialized: true,
         cookie: { secure: false },
     })
@@ -23,7 +23,7 @@ app.use(
 
 // Function to create a user
 const createsUser = async () => {
-    let random_number = Math.floor(Math.random() * 20) + 1;
+    let random_number = Math.floor(Math.random() * 10) + 1;
     try {
         const res = await client.query(
             `INSERT INTO users (random_number, chance) VALUES ($1, 5) RETURNING *`,

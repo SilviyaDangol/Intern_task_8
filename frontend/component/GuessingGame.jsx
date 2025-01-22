@@ -33,7 +33,7 @@ const GuessingGame = () => {
                 attemptsLeft: res.data.attemptsLeft,
                 gameOver: false,
                 won: false,
-                feedback: "Game started! Guess a number between 1 and 20",
+                feedback: "Game started! Guess a number between 1 and 10",
                 feedbackType: "hint",
             }));
         } catch (err) {
@@ -62,10 +62,10 @@ const GuessingGame = () => {
             console.error("Error processing guess:", err);
         }
     };
-
-
     useEffect(() => {
-        initializeGame();
+        initializeGame().catch((err) => {
+            console.error("Error initializing game:", err);
+        });
     }, []);
 
     return (
